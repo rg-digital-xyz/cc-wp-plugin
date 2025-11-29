@@ -1,0 +1,18 @@
+{
+    "name": "{{ cookiecutter.author_name|lower }}/{{ cookiecutter.plugin_slug }}",
+    "description": "{{ cookiecutter.plugin_description }}",
+    "license": "GPL-3.0-or-later",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "{{ cookiecutter.author_name }}",
+            "homepage": "{{ cookiecutter.author_uri }}"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "{{ cookiecutter.composer_namespace }}\\": "src/"
+        }
+    },
+    "require": {}
+}

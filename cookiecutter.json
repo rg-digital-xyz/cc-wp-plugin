@@ -1,0 +1,9 @@
+{
+    "plugin_name": "My Plugin",
+    "plugin_slug": "my-plugin",
+    "plugin_description": "A WordPress plugin.",
+    "author_name": "Your Name",
+    "author_uri": "https://example.com",
+    "php_namespace": "RgDigital\\MyPlugin",
+    "composer_namespace": "RgDigital\\\\MyPlugin"
+}
