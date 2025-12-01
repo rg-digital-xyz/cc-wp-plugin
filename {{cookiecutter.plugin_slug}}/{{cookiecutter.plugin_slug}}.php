@@ -15,6 +15,8 @@ define('{{ cookiecutter.plugin_slug|upper }}_WP_PLUGIN_URL', plugin_dir_url(__FI
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require __DIR__ . '/vendor/autoload.php';
+} else {
+    wp_die('Please run "composer install" from the plugin root directory.');
 }
 
 /**
