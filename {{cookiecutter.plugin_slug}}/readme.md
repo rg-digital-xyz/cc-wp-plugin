@@ -1,4 +1,7 @@
-=== {{ cookiecutter.plugin_name }} ===
-Contributors: {{ cookiecutter.author_name }}
-Description: {{ cookiecutter.plugin_description }}
-Text Domain: {{ cookiecutter.plugin_slug }}
+# {{ cookiecutter.plugin_name }}
+
+{{ cookiecutter.plugin_description }}
+
+## Installation
+
+See [readme.txt](readme.txt) for full installation instructions and WordPress.org metadata.

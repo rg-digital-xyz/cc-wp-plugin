@@ -1,7 +1,8 @@
 {
-    "name": "{{ cookiecutter.author_name|lower }}/{{ cookiecutter.plugin_slug }}",
+    "name": "{{ cookiecutter.vendor_slug }}/{{ cookiecutter.plugin_slug }}",
+    "version": "{{ cookiecutter.version }}",
     "description": "{{ cookiecutter.plugin_description }}",
-    "license": "GPL-3.0-or-later",
+    "license": "{{ cookiecutter.license }}",
     "type": "wordpress-plugin",
     "authors": [
         {
@@ -14,5 +15,20 @@
             "{{ cookiecutter.composer_namespace }}\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">={{ cookiecutter.requires_php }}"
+{% if cookiecutter.include_guzzle | lower in ['yes', 'true', '1'] %},
+        "guzzlehttp/guzzle": "^7.0"
+{% endif %}
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "build": "composer install --no-dev --optimize-autoloader"
+    },
+    "scripts-descriptions": {
+        "build": "Install production dependencies and optimize autoloader"
+    }
 }

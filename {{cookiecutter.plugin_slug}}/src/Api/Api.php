@@ -2,14 +2,16 @@
 
 namespace {{ cookiecutter.php_namespace }}\Api;
 
+use {{ cookiecutter.php_namespace }}\Api\Controllers\ExampleController;
+
 if (!defined('ABSPATH')) exit;
 
-Class Api
+class Api
 {
-    public function init()
+    public function init(): void
     {
-        add_action('rest_api_init', function () {
-            // controller class
+        add_action('rest_api_init', function (): void {
+            (new ExampleController())->register_routes();
         });
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace {{ cookiecutter.php_namespace }}\Api\Clients;
 
 use GuzzleHttp\Client;
@@ -6,24 +7,22 @@ use GuzzleHttp\Exception\RequestException;
 
 if (!defined('ABSPATH')) exit;
 
-Class ExampleClient
+class ExampleClient
 {
     private Client $client;
 
-
     /**
-     * Constructor
      * @param string|null $token Optional Bearer token for authentication
      */
     public function __construct(?string $token = null)
     {
-        if ($token) {
+        $config = [];
+        if ($token !== null && $token !== '') {
             $config['headers'] = [
-                'Authorization' => "Bearer {$token}",
+                'Authorization' => 'Bearer ' . $token,
                 'Accept'        => 'application/json',
             ];
         }
-
         $this->client = new Client($config);
     }
 

@@ -1,1 +1,10 @@
 vendor
+node_modules
+dist
+*.zip
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+src/Admin/build
+src/Frontend/build

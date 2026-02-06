@@ -1,0 +1,12 @@
+{
+    "name": "{{ cookiecutter.plugin_slug }}",
+    "version": "{{ cookiecutter.version }}",
+    "private": true,
+    "description": "{{ cookiecutter.plugin_description }}",
+    "scripts": {
+        "build": "composer run build",
+        "zip": "powershell -ExecutionPolicy Bypass -File scripts/make-zip.ps1",
+        "zip:no-composer": "powershell -ExecutionPolicy Bypass -File scripts/make-zip.ps1 -SkipComposer",
+        "zip:ci": "powershell -ExecutionPolicy Bypass -File scripts/make-zip.ps1 -SkipComposer -NoPause"
+    },
+}
