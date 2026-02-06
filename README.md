@@ -2,11 +2,45 @@
 
 Generate a WordPress plugin with Composer, REST API structure, and build tooling.
 
-## Usage
+## Prerequisites
 
-```bash
-cookiecutter .
-```
+- [Cookiecutter](https://cookiecutter.readthedocs.io/) (`pip install cookiecutter`)
+- PHP 7.4+ with Composer
+- Node.js + pnpm or npm (for zip scripts)
+
+## How to use
+
+1. **Generate the plugin**
+
+   ```bash
+   cookiecutter .
+   ```
+
+   Or from a specific path:
+
+   ```bash
+   cookiecutter gh:your-org/cc-wp-plugin
+   ```
+
+2. **Enter the prompts** — plugin name, slug, description, author, vendor slug, namespace, license, PHP version, and whether to include Guzzle.
+
+3. **Install dependencies**
+
+   ```bash
+   cd my-plugin   # or whatever slug you chose
+   composer install
+   ```
+
+4. **Activate** the plugin in WordPress (Plugins → Installed Plugins → Activate).
+
+5. **Create a distributable zip** (optional)
+
+   ```bash
+   pnpm zip
+   # or: npm run zip
+   ```
+
+   This runs `composer install --no-dev` and creates `my-plugin.zip` in the project root.
 
 ## Key variables
 
