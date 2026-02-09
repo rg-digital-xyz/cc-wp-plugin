@@ -11,10 +11,11 @@ class I18n
 {
     public function load_plugin_textdomain(): void
     {
+        $relative_path = dirname(dirname(dirname(plugin_basename(__FILE__)))) . '/languages/';
         load_plugin_textdomain(
-            '{{ cookiecutter.plugin_slug }}',
+            Config::TEXT_DOMAIN,
             false,
-            dirname(plugin_basename({{ cookiecutter.plugin_slug|replace('-','_')|upper }}_WP_PLUGIN_DIR)) . '/languages'
+            $relative_path
         );
     }
 }

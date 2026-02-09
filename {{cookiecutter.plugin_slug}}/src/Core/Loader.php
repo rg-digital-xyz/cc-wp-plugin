@@ -26,8 +26,9 @@ class Loader
 
     public function run(): void
     {
-        $this->i18n->load_plugin_textdomain();
+        add_action('plugins_loaded', [$this->i18n, 'load_plugin_textdomain']);
         $this->api->init();
+        $this->api->register_ajax_handlers();
 
         if (is_admin()) {
             $this->admin->init();
